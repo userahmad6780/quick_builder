@@ -9,7 +9,7 @@ function ResumeSteps() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20">
             <div className="flex flex-col items-center justify-center gap-2">
                 <div>
-                    <img className="w-80 h-80 object-contain" src={assets.step1} alt="pick a cv template"/>
+                    <img className="w-50 h-50 md:w-80 md:h-80 object-contain" src={assets.step1} alt="pick a cv template"/>
                 </div>
                 <span className="text-indigo-800 text-md md:text-xl font-semibold">
                     Pick a CV template.
@@ -20,7 +20,7 @@ function ResumeSteps() {
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
                 <div>
-                    <img className="w-80 h-80 object-contain" src={assets.step2} alt="fill in the blanks"/>
+                    <img className="w-50 h-50 md:w-80 md:h-80 object-contain" src={assets.step2} alt="fill in the blanks"/>
                 </div>
                 <span className="text-indigo-800 text-md md:text-xl font-semibold">
                     Fill in the blanks.
@@ -31,7 +31,7 @@ function ResumeSteps() {
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
                 <div>
-                    <img className="w-80 h-80 object-contain" src={assets.step3} alt="customize your document"/>
+                    <img className="w-50 h-50 md:w-80 md:h-80 object-contain" src={assets.step3} alt="customize your document"/>
                 </div>
                 <span className="text-indigo-800 text-md md:text-xl font-semibold">
                     Customize your document.
