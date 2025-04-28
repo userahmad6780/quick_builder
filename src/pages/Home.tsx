@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import ResumeHeighlight from "../components/ResumeHeighlight"
 import ResumeSteps from "../components/ResumeSteps"
+import TryQuickBuilder from "../components/TryQuickBuilder"
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Header/>
       <ResumeHeighlight/>
       <ResumeSteps/>
+      <TryQuickBuilder/>
     </>
   )
 }
