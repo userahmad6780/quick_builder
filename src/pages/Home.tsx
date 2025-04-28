@@ -1,6 +1,12 @@
+import Header from "../components/Header"
+import ResumeHeighlight from "../components/ResumeHeighlight"
+
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <Header/>
+      <ResumeHeighlight/>
+    </>
   )
 }
 
