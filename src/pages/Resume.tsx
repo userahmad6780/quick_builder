@@ -47,13 +47,15 @@ function Resume() {
         ))}
       </div>
 
-      <PDFViewer
-        showToolbar={false}
-        style={{ width: '480px', height: '660px', backgroundColor: 'transparent' }}
-        key={selectedResumeId}
-      >
-        {currentResume}
-      </PDFViewer>
+      <div className='flex flex-1 justify-center'>
+        <PDFViewer
+          showToolbar={false}
+          style={{ width: '510px', height: '700px' }}
+          key={selectedResumeId}
+        >
+          {currentResume}
+        </PDFViewer>
+      </div>
     </div>
   );
 }
