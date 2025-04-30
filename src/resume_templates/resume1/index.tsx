@@ -79,21 +79,23 @@ Font.register({
 });
 
 const CustomResume = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Page> & Readonly<PropsWithChildren<PageProps>>) => (
-  <Page {...props} style={styles.page}>
-    <Header />
-    <View style={styles.container}>
-      <View style={styles.leftColumn}>
-        <Image
-          src="https://react-pdf.org/static/images/luke.jpg"
-          style={styles.image}
-        />
-        <Education />
-        <Skills />
+  <Document>
+    <Page {...props} style={styles.page}>
+      <Header />
+      <View style={styles.container}>
+        <View style={styles.leftColumn}>
+          {/* <Image
+            src="https://react-pdf.org/static/images/luke.jpg"
+            style={styles.image}
+          /> */}
+          <Education />
+          <Skills />
+        </View>
+        <Experience />
       </View>
-      <Experience />
-    </View>
-    <Text style={styles.footer}>This IS the candidate you are looking for</Text>
-  </Page>
+      <Text style={styles.footer}>This IS the candidate you are looking for</Text>
+    </Page>
+  </Document>
 );
 
 export default CustomResume;
