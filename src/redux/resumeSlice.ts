@@ -40,6 +40,10 @@ export const resumeSlice = createSlice({
     loading: false,
   },
   reducers: {
+    updateCurrentResume: (state, action) => {
+        state.loading = false;
+        state.currentResume = action.payload
+    },
     updatePersonalDetails: (state, action) => {
         state.loading = false;
         state.personalDetails = action.payload
@@ -65,6 +69,7 @@ export const resumeSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { 
+    updateCurrentResume,
     updatePersonalDetails, 
     updateProfessionalSummary, 
     updateEmployementHistory, 

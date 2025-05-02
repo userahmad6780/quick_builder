@@ -78,11 +78,11 @@ const CustomResume2 = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttrib
   <Document>
     <Page {...props} style={styles.page}>
       <Header />
+      <View style={styles.leftColumn}>
+        <Skills />
+        <Education />
+      </View>
       <View style={styles.container}>
-        <View style={styles.leftColumn}>
-          <Skills />
-          <Education />
-        </View>
         <Experience />
       </View>
       <Text style={styles.footer}>This IS the candidate you are looking for</Text>

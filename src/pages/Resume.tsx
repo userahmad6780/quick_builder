@@ -2,19 +2,29 @@ import { PDFViewer } from '@react-pdf/renderer';
 import CustomResume from '../resume_templates/resume1';
 import CustomResume2 from '../resume_templates/resume2';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCurrentResume } from '../redux/resumeSlice';
+import { Button } from '../components/ui/button';
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 function Resume() {
-  // Define resume templates as an array of components with identifiers
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { currentResume } = useSelector((state) => state.userResume);
+
+  useEffect(() => {
+    console.log(currentResume, '------------------')
+  }, [currentResume])
+  
   const resumeList = [
     { id: 'resume1', component: <CustomResume size={'A4'} /> },
     { id: 'resume2', component: <CustomResume2 size={'A4'} /> },
   ];
 
-  // Store the selected resume ID instead of the component
   const [selectedResumeId, setSelectedResumeId] = useState(resumeList[0].id);
 
-  // Find the current resume component based on the selected ID
-  const currentResume = resumeList.find((res) => res.id === selectedResumeId)?.component;
+  const selectedResume = resumeList.find((res) => res.id === selectedResumeId)?.component;
 
   useEffect(() => {
     console.log(selectedResumeId, 'Selected Resume ID');
@@ -39,7 +49,11 @@ function Resume() {
             </PDFViewer>
             <div
               className="absolute inset-0 z-10"
-              onClick={() => setSelectedResumeId(res.id)}
+              onClick={() => {
+                setSelectedResumeId(res.id)
+                dispatch(updateCurrentResume(res.id))
+                }
+              }
               aria-label={`Select resume ${res.id}`}
               role="button"
             />
@@ -48,13 +62,18 @@ function Resume() {
       </div>
 
       <div className='flex flex-1 justify-center'>
-        <PDFViewer
-          showToolbar={false}
-          style={{ width: '510px', height: '700px' }}
-          key={selectedResumeId}
-        >
-          {currentResume}
-        </PDFViewer>
+        <div className='flex'>
+          <PDFViewer
+            showToolbar={false}
+            style={{ width: '510px', height: '700px' }}
+            key={selectedResumeId}
+          >
+            {selectedResume}
+          </PDFViewer>
+          <Button onClick={()=>{navigate(`/resume/${selectedResumeId}`)}} className='ml-10 text-sm lg:text-xl font-medium py-4 px-2 md:py-3 md:px-3 w-10 h-10 cursor-pointer text-white bg-blue-500 hover:bg-blue-300 rounded-full'>
+            <MdOutlineArrowForwardIos />
+          </Button>
+        </div>
       </div>
     </div>
   );
