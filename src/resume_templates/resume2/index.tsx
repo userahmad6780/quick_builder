@@ -3,7 +3,6 @@ import {
   Font,
   Page,
   View,
-  Image,
   Document,
   StyleSheet,
   PageProps,
@@ -26,9 +25,6 @@ const styles = StyleSheet.create({
     '@media max-width: 400': {
       flexDirection: 'column',
     },
-  },
-  image: {
-    marginBottom: 10,
   },
   leftColumn: {
     flexDirection: 'column',
@@ -78,22 +74,20 @@ Font.register({
   src: `https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf`,
 });
 
-const CustomResume = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Page> & Readonly<PropsWithChildren<PageProps>>) => (
-  <Page {...props} style={styles.page}>
-    <Header />
-    <View style={styles.container}>
+const CustomResume2 = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Page> & Readonly<PropsWithChildren<PageProps>>) => (
+  <Document>
+    <Page {...props} style={styles.page}>
+      <Header />
       <View style={styles.leftColumn}>
-        <Image
-          src="https://react-pdf.org/static/images/luke.jpg"
-          style={styles.image}
-        />
-        <Education />
         <Skills />
+        <Education />
       </View>
-      <Experience />
-    </View>
-    <Text style={styles.footer}>This IS the candidate you are looking for</Text>
-  </Page>
+      <View style={styles.container}>
+        <Experience />
+      </View>
+      <Text style={styles.footer}>This IS the candidate you are looking for</Text>
+    </Page>
+  </Document>
 );
 
-export default CustomResume;
+export default CustomResume2;

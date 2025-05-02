@@ -11,7 +11,7 @@ function AppBar() {
     const [user, setUser] = useState<User | null>({name:'ahmad'})
 
   return (
-    <div className='hidden md:flex justify-between items-center py-5 px-4 sm:px-[15%] inset-x-0 top-0 z-50'>
+    <div className='fixed bg-white hidden md:flex justify-between items-center py-5 px-4 sm:px-[15%] inset-x-0 top-0 z-50'>
         <div className='flex items-center'>
             <img className="w-[40px]" src={assets.logo} alt='app_logo'/>
             <span className='px-2 text-gray-800 dark:text-white font-bold text-2xl'>QuickBuilder</span>
