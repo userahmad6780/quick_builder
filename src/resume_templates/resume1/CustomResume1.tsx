@@ -9,12 +9,12 @@ import {
   PageProps,
 } from '@react-pdf/renderer';
 
-import Header from './Header';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 import { PropsWithChildren } from 'react';
 import { JSX } from 'react/jsx-runtime';
+import Header from './Header';
 
 const styles = StyleSheet.create({
   page: {
@@ -78,8 +78,9 @@ Font.register({
   src: `https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf`,
 });
 
-const CustomResume = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Page> & Readonly<PropsWithChildren<PageProps>>) => (
-  <Document>
+const CustomResume1 = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Page> & Readonly<PropsWithChildren<PageProps>>) => {
+
+  return <Document>
     <Page {...props} style={styles.page}>
       <Header />
       <View style={styles.container}>
@@ -96,6 +97,6 @@ const CustomResume = (props: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttribu
       <Text style={styles.footer}>This IS the candidate you are looking for</Text>
     </Page>
   </Document>
-);
+};
 
-export default CustomResume;
+export default CustomResume1;

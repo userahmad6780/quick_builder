@@ -1,7 +1,7 @@
 import { PDFViewer } from '@react-pdf/renderer'
 import React, { memo } from 'react'
-import CustomResume from '../resume_templates/resume1';
-import CustomResume2 from '../resume_templates/resume2';
+import CustomResume from '../resume_templates/resume1/CustomResume1';
+import CustomResume2 from '../resume_templates/resume2/CustomResume2';
 
 interface Props {
     setSelectedResumeId :any

@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import resumeReducer from './resumeSlice'
 
-
-export default configureStore({
+const store = configureStore({
   reducer: {
     userResume : resumeReducer
   }
-})
+});
+
+export default store;
