@@ -1,5 +1,7 @@
 
 import { Link, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,16 +41,26 @@ const styles = StyleSheet.create({
   },
 });
 
-export default () => (
-  <View style={styles.container}>
-    <View style={styles.detailColumn}>
-      <Text style={styles.name}>Luke Skywalker</Text>
-      <Text style={styles.subtitle}>Jedi Master</Text>
+function Header (){
+  // const test = useSelector((state: any) => state);
+  // console.log(test, '-----------HEADER----------------')
+  // useEffect(() => {
+  //   console.log(personalDetails, '--------header--------')
+  // }, [personalDetails])
+  
+  return (
+    <View style={styles.container}>
+      <View style={styles.detailColumn}>
+        <Text style={styles.name}>Luke Skywalker</Text>
+        <Text style={styles.subtitle}>Jedi Master</Text>
+      </View>
+      <View style={styles.linkColumn}>
+        <Link href="mailto:luke@theforce.com" style={styles.link}>
+          luke@theforce.com
+        </Link>
+      </View>
     </View>
-    <View style={styles.linkColumn}>
-      <Link href="mailto:luke@theforce.com" style={styles.link}>
-        luke@theforce.com
-      </Link>
-    </View>
-  </View>
-);
+  )
+};
+
+export default Header;

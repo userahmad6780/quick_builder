@@ -1,24 +1,21 @@
 import { PDFViewer } from '@react-pdf/renderer';
-import CustomResume from '../resume_templates/resume1';
-import CustomResume2 from '../resume_templates/resume2';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCurrentResume } from '../redux/resumeSlice';
 import { Button } from '../components/ui/button';
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import CustomResume1 from '../resume_templates/resume1/CustomResume1';
+import CustomResume2 from '../resume_templates/resume2/CustomResume2';
 
 function Resume() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { currentResume } = useSelector((state) => state.userResume);
 
-  useEffect(() => {
-    console.log(currentResume, '------------------')
-  }, [currentResume])
+  const resumeData = useSelector((state: any) => state.userResume);
   
   const resumeList = [
-    { id: 'resume1', component: <CustomResume size={'A4'} /> },
+    { id: 'resume1', component: <CustomResume1 size={'A4'}  /> },
     { id: 'resume2', component: <CustomResume2 size={'A4'} /> },
   ];
 
